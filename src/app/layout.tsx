@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "FreeDomainHub - Free Domain Registration & DNS Management",
+  description: "Get your free domain name with full DNS control. No payments, no limits. Register domains instantly and manage DNS records with our modern platform.",
 };
 
 export default function RootLayout({

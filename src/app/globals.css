@@ -1,97 +1,121 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/*
+ * FREEDOMAINHUB DESIGN SYSTEM
+ * Pixel-perfect replication of design reference
+ * Based on: context/images/ai-generated-preview.png
+ *
+ * EXTRACTED SPECIFICATIONS:
+ * - Background: Blue-gray gradient (#667B96 to #4A5F7A)
+ * - Header/Footer: Dark blue-gray (#3A4558)
+ * - Primary CTA: Vibrant orange (#FF7F3E)
+ * - Cards: Pure white (#FFFFFF)
+ * - Typography: Inter font family, clean geometric sans-serif
+ * - Border radius: 12px cards, 8px buttons
+ * - Shadows: Soft depth (0 4px 20px rgba(0,0,0,0.1))
+ */
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  /* FREEDOMAINHUB BRAND COLORS (EXACT FROM DESIGN REFERENCE) */
+  /* Blue-gray gradient background: #667B96 (HSL: 212 24% 51%) */
+  --background: 212 24% 51%;
+  --foreground: 0 0% 100%;
 
-  /* Clean white cards with black text */
+  /* Card backgrounds: Pure white #FFFFFF */
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  --card-foreground: 218 18% 22%;
 
-  /* Popovers with white background */
+  /* Popovers: White with dark text */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --popover-foreground: 218 18% 22%;
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
+  /* Primary CTA: Vibrant Orange #FF7F3E (HSL: 18 100% 62%) */
+  --primary: 18 100% 62%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary: Dark blue-gray #3A4558 (HSL: 215 21% 29%) */
+  --secondary: 215 21% 29%;
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* Muted: Lighter blue-gray */
+  --muted: 215 15% 85%;
+  --muted-foreground: 218 18% 40%;
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Accent: Orange for highlights */
+  --accent: 18 100% 62%;
+  --accent-foreground: 0 0% 100%;
 
-  /* Destructive: Clean red */
+  /* Destructive: Red for errors */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  /* Borders: Subtle gray-blue */
+  --border: 215 15% 80%;
+  --input: 0 0% 100%;
+  --ring: 18 100% 62%;
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Border radius from design: 12px cards, 8px buttons */
+  --radius: 0.75rem;
 
-  /* Sidebar: Clean white with black text */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  /* Sidebar: Dark theme */
+  --sidebar-background: 215 21% 29%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 18 100% 62%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 215 21% 35%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 215 21% 25%;
+  --sidebar-ring: 18 100% 62%;
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
+  /* Dark mode: Darker blue-gray gradient */
+  --background: 215 25% 15%;
+  --foreground: 0 0% 98%;
 
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
+  /* Dark cards: Slightly lighter than background */
+  --card: 215 21% 20%;
+  --card-foreground: 0 0% 98%;
 
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
+  /* Dark popovers */
+  --popover: 215 21% 20%;
+  --popover-foreground: 0 0% 98%;
 
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
+  /* Primary CTA remains vibrant orange */
+  --primary: 18 100% 62%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
+  /* Secondary: Even darker blue-gray */
+  --secondary: 215 21% 25%;
+  --secondary-foreground: 0 0% 98%;
 
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
+  /* Muted: Mid-tone blue-gray */
+  --muted: 215 21% 30%;
+  --muted-foreground: 215 15% 70%;
 
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  /* Accent: Orange highlight */
+  --accent: 18 100% 62%;
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  /* Destructive: Red for errors */
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
-  --sidebar-background: 240 5.9% 10%;
-  --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
+  /* Borders: Subtle in dark mode */
+  --border: 215 21% 30%;
+  --input: 215 21% 20%;
+  --ring: 18 100% 62%;
+
+  /* Sidebar in dark mode */
+  --sidebar-background: 215 25% 12%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 18 100% 62%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar-accent: 215 21% 18%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 215 21% 18%;
+  --sidebar-ring: 18 100% 62%;
 }
 
 @theme {
@@ -168,36 +192,147 @@ All colors MUST be HSL.
   border-color: hsl(var(--border));
 }
 
-body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-  font-feature-settings: "rlig" 1, "calt" 1;
+/* TYPOGRAPHY SYSTEM - Based on Inter font from design reference */
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
-/* Minimal, clean typography */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
+body {
+  background: linear-gradient(135deg, hsl(212, 24%, 51%) 0%, hsl(215, 25%, 45%) 100%);
   color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
 }
 
-/* Clean button styles */
+/* Dark mode background gradient */
+.dark body {
+  background: linear-gradient(135deg, hsl(215, 25%, 15%) 0%, hsl(215, 28%, 10%) 100%);
+}
+
+/* HEADING HIERARCHY - Exact sizes from design reference */
+h1 {
+  font-size: 3rem; /* 48px - Hero headline size */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: hsl(var(--foreground));
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.25rem; /* 36px - Section headlines */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px - Subsection titles */
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.375rem; /* 22px - Card titles */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.625rem;
+}
+
+h5 {
+  font-size: 1.125rem; /* 18px - Small headings */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 1rem; /* 16px - Minor headings */
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+/* BODY TEXT & PARAGRAPHS */
+p {
+  font-size: 1.125rem; /* 18px - Body text from design */
+  font-weight: 400;
+  line-height: 1.7;
+  color: hsl(var(--foreground));
+  margin-bottom: 1rem;
+}
+
+/* BUTTON DEFAULTS - Match design reference */
 button {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
 }
 
-/* Subtle shadows for depth */
+/* LINK STYLES */
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: hsl(18, 100%, 55%);
+}
+
+/* FORM ELEMENT DEFAULTS */
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* SHADOW SYSTEM - From design reference (soft depth) */
 .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* CARD GLOW EFFECT - Orange accent glow for interactive elements */
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 127, 62, 0.3);
+}
+
+.glow-orange:hover {
+  box-shadow: 0 0 30px rgba(255, 127, 62, 0.5);
+}
+
+/* SMOOTH TRANSITIONS */
+* {
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
 }
